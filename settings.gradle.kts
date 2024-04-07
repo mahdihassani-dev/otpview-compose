@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "LibraryGithub"
-include(":app")
+include(":sample")
 //include(":OtpViewCompose")
