@@ -16,9 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
 rootProject.name = "LibraryGithub"
 include(":app")
-include(":OtpViewCompose")
+//include(":OtpViewCompose")
