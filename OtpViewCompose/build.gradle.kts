@@ -1,6 +1,3 @@
-import java.io.FileInputStream
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -13,11 +10,6 @@ android {
     namespace = "com.example.otpviewcompose"
     compileSdk = 34
 
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
 
     defaultConfig {
         minSdk = 24
@@ -51,6 +43,17 @@ android {
     }
 
 
+}
+
+
+publishing{
+    publications{
+        register<MavenPublication>("release"){
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
 
 dependencies {
